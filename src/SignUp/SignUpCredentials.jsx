@@ -1,4 +1,5 @@
 import { useHistory, useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import { useRef } from "react";
 const SignUpCredentials = () => {
   let username = useRef();
@@ -9,6 +10,7 @@ const SignUpCredentials = () => {
   let city=useRef();
   let state=useRef();
   let zip=useRef();
+  let history = useHistory();
  let addUser=(e)=>{
   e.preventDefault();
    const newObj={
@@ -21,9 +23,16 @@ const SignUpCredentials = () => {
     zip:zip.current.value
    }
    localStorage.setItem('userDetails',JSON.stringify(newObj));
+   if(newObj!==null)
+   {
+      alert("signed up successfully")
+      history.goBack();
+
+   }
    
   }
     return ( <div>
+      
        <form class="row g-3" onSubmit={addUser}>
   <div class="col-md-6">
     <label for="username" class="form-label">UserName</label>
@@ -59,7 +68,7 @@ const SignUpCredentials = () => {
   </div>
  
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Sign in</button>
+    <button type="submit" class="btn btn-primary">Sign Up</button>
   </div>
 </form>
     </div> );
