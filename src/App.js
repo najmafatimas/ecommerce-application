@@ -20,7 +20,7 @@ function App() {
        <Navbar1/>
         <Homepage/>
       </Route>
-      <Route  path='/categories:category'>
+      <Route  path='/hello:category'>
        <Navbar1/>
         <CategoryList/>
       </Route>

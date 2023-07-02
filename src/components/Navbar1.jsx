@@ -36,7 +36,7 @@ console.log(showProf.userName)
            Categories
           </a>
           <ul class="dropdown-menu">
-            <li><Link class="dropdown-item" to="/categorieselectronics">Electronics</Link></li>
+            <li><Link class="dropdown-item" to="/helloelectronics">Electronics</Link></li>
             <li><a class="dropdown-item" href="/hellojewelery">Jewelery</a></li>
             <li><a class="dropdown-item" href="/hellomen's clothing">Men's clothing</a></li>
             <li><a class="dropdown-item" href="/hellowomen's clothing">Women's clothing</a></li>
