@@ -84,7 +84,7 @@ const Navbar = () => {
             <div className="modal-dialog" id="center-aligned-account-modal">
               <div className="modal-content" style={{ height: "auto", width: "500px" }}>
                 <div className="modal-header noBorder" style={{ height: '1px' ,padding:'20px'}}>
-                  <button type="button"class="btn-close" data-bs-dismiss="modal" aria-label="Close" style={{marginLeft:"95%"}} onClick={()=>{showpopLogin(false);window.location.reload();}}>
+                  <button type="button"class="btn-close" data-bs-dismiss="modal" aria-label="Close" style={{marginLeft:"95%"}} onClick={()=>{setShowpopLogin(false);window.location.reload();}}>
                     
                     {/* <i class="fa fa-close"></i> */}
 
