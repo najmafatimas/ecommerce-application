@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory} from "react-router-dom";
-
+import { Link } from 'react-router-dom';
 const Navbar1 = () => {
   let history=useHistory();
  let [showProf,setShowProf]=useState({});
@@ -36,7 +36,7 @@ console.log(showProf.userName)
            Categories
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/categorieselectronics">Electronics</a></li>
+            <li><Link class="dropdown-item" to="/categorieselectronics">Electronics</Link></li>
             <li><a class="dropdown-item" href="/hellojewelery">Jewelery</a></li>
             <li><a class="dropdown-item" href="/hellomen's clothing">Men's clothing</a></li>
             <li><a class="dropdown-item" href="/hellowomen's clothing">Women's clothing</a></li>
