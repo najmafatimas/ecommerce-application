@@ -13,14 +13,26 @@ const ProductDetails = () => {
     {
       
      
-           <div key={productDetails.id}>
-           <img src={productDetails.image} alt={productDetails.title} className="product-image" />
-           <h3 className="product-title">{productDetails.title}</h3>
-           <p className="product-category">{productDetails.category}</p>
-            <p className="product-price">{productDetails.price}</p>
-            <p className="product-description">{productDetails.description}</p>
-            <button className="btn btn-dark">Add Cart</button>
+        //    <div key={productDetails.id}>
+        //    <img src={productDetails.image} alt={productDetails.title} className="product-image" />
+        //    <h3 className="product-title">{productDetails.title}</h3>
+        //    <p className="product-category">{productDetails.category}</p>
+        //     <p className="product-price">{productDetails.price}</p>
+        //     <p className="product-description">{productDetails.description}</p>
+        //     <button className="btn btn-dark">Add Cart</button>
+        //  </div>
+        <div className="card">
+        <div className="card-body">
+        <div key={productDetails.id}>
+            <img src={productDetails.image} alt={productDetails.title} className="product-image" />
+        <h3 className="product-title">{productDetails.title}</h3>
+            <p className="product-category">{productDetails.category}</p>
+             <p className="product-price">{productDetails.price}</p>
+             <p className="product-description">{productDetails.description}</p>
+             <button className="btn btn-dark">Add Cart</button>
          </div>
+        </div>
+      </div>
      
    }
    

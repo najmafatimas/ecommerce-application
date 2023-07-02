@@ -51,7 +51,7 @@ console.log(showProf.userName)
   </div>
 </nav>
  <div class="modal" tabindex="-1" id="exampleModal">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">User Account</h5>
