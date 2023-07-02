@@ -12,18 +12,22 @@ const CategoryList = () => {
    
     return ( 
     <>
-    <div  className="product">
-         {
-           
-            categoryList.map((v)=>{
-                return (
-            <Link to={`/home/productDetails${v.id}`}>
+     <div className="container product">
+      <div className="row">
+        {productList.map((v) => (
+          <div className="col-sm-6 col-md-4 col-lg-3" key={v.id}>
+            <div className="card">
+              <div className="card-body">
+              <Link to={`/home/productDetails${v.id}`}>
                 <img src={v.image} alt={v.title} className="product-image" />
                 <h3 className="product-title">{v.title}</h3>
-                <p className="product-category">{v.category}</p>
-                </Link>)
-            })
-        }
+                 <p className="product-category">{v.category}</p>
+             </Link>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div></> );
 }
  
