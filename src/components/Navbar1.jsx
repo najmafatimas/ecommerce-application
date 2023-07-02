@@ -23,7 +23,7 @@ console.log(showProf.userName)
     <div class="collapse navbar-collapse justify-content-end " id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/hello">Home</a>
+          <a class="nav-link active" role="button"aria-current="page" href="/hello">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/about">About</a>
@@ -32,11 +32,11 @@ console.log(showProf.userName)
           <a class="nav-link" href="/contact">Contact</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"  href="/" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle"  href="/"data-bs-toggle="dropdown" aria-expanded="false">
            Categories
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/helloelectronics">Electronics</a></li>
+            <li><a class="dropdown-item" href="/categorieselectronics">Electronics</a></li>
             <li><a class="dropdown-item" href="/hellojewelery">Jewelery</a></li>
             <li><a class="dropdown-item" href="/hellomen's clothing">Men's clothing</a></li>
             <li><a class="dropdown-item" href="/hellowomen's clothing">Women's clothing</a></li>
