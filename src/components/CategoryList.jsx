@@ -14,7 +14,7 @@ const CategoryList = () => {
     <>
      <div className="container product">
       <div className="row">
-        {productList.map((v) => (
+        {categoryList.map((v) => (
           <div className="col-sm-6 col-md-4 col-lg-3" key={v.id}>
             <div className="card">
               <div className="card-body">
