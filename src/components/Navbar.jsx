@@ -102,7 +102,7 @@ const Navbar = () => {
 <div ><img src="e3logo.jpg" alt="shopping logo" width="100%"/></div>
   <div className="wrapper">
           <div className="modal" style={{ display:showpopLogin===true ? 'block' : 'none' }} >
-            <div className="modal-dialog" id="center-aligned-account-modal">
+            <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable" id="center-aligned-account-modal">
               <div className="modal-content" style={{ height: "auto", width: "500px" }}>
                 <div className="modal-header noBorder" style={{ height: '1px' ,padding:'20px'}}>
                   <button type="button"class="btn-close" data-bs-dismiss="modal" aria-label="Close" style={{marginLeft:"95%"}} onClick={()=>{setShowpopLogin(false);window.location.reload();}}>
@@ -112,7 +112,7 @@ const Navbar = () => {
                   </button>
                 </div>
                
-                  <div className="modal-body" style={{ height: '400px' }}>
+                  <div className="modal-body" >
                    <SignUpCredentials/>
    
                   
@@ -124,16 +124,16 @@ const Navbar = () => {
         </div >
   
   
-        <div className="wrapper">
+        
           <div className="modal" style={{ display:showpop===true ? 'block' : 'none' }}>
-            <div className="modal-dialog" id="center-aligned-account-modal">
+            <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable" id="center-aligned-account-modal">
               <div className="modal-content" style={{ height: "auto", width: "500px" }}>
                 <div className="modal-header noBorder" style={{ height: '1px' ,padding:'20px'}}>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"  style={{marginLeft:"95%"}}  onClick={()=>{setShowpop(false);window.location.reload();}}>
                   </button>
                 </div>
                
-                  <div className="modal-body" style={{ height: '400px' }}>
+                  <div className="modal-body">
                  
   <Login/>
                   </div>
@@ -141,7 +141,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-        </div >
+       
   
   
   
