@@ -10,21 +10,33 @@ const Login = () => {
     let history=useHistory();
     let loginUser=(e)=>{
         e.preventDefault();
-        let userDetails=JSON.parse(localStorage.getItem('userDetails'));
-        if(userDetails !==null )
+        let usersData=JSON.parse(localStorage.getItem('users'));
+        let userInfo={};
+        if(usersData !==null )
         {
             console.log(username,password);
-            if(userDetails.username===username.current.value && userDetails.password===password.current.value)
+            for(let i=0;i<usersData.length;i++)
             {
-                alert("login Successfull");
-                history.push("/hello")
-            }
-            else
+            if(usersData[i].userName===username.current.value && usersData[i].userPassword===password.current.value)
             {
-                alert("please provide proper crendentials");
+                // alert("login Successfull");
+                // history.push("/hello")
+                userInfo=usersData[i];
             }
+           
+          }
         }
-       
+        if(userInfo===undefined)
+        {
+          alert("please signup first");
+          history.push("/")
+        }
+       else
+       {
+        alert("login successfully");
+        localStorage.setItem('userDetails',JSON.stringify(userInfo));
+        history.push("/hello");
+       }
 
     }
     return ( <div><form class="row g-3" onSubmit={loginUser}>

@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import {useEffect,useState} from 'react';
+import { Link } from 'react-router-dom';
 const CategoryList = () => {
     let {category}=useParams();
     const [categoryList,setCategoryList]=useState([])
@@ -8,19 +9,28 @@ const CategoryList = () => {
         .then(res=>res.json())
         .then(json=>setCategoryList(json))
     },[])
-    return ( <div>
+   
+    return ( 
+    <>
+    <div  className="product">
          {
+           
             categoryList.map((v)=>{
-                return (<div key={v.id} className="product">
+                return (
+            //     <div key={v.id}>
+            //     <img src={v.image} alt={v.title} className="product-image" />
+            //     <h3 className="product-title">{v.title}</h3>
+            //     <p className="product-category">{v.category}</p>
+               
+            //   </div>
+            <Link to={`/home/productDetails${v.id}`}>
                 <img src={v.image} alt={v.title} className="product-image" />
                 <h3 className="product-title">{v.title}</h3>
                 <p className="product-category">{v.category}</p>
-                <p className="product-price">{v.price}</p>
-                <p className="product-description">{v.description}</p>
-              </div>)
+                </Link>)
             })
         }
-    </div> );
+    </div></> );
 }
  
 export default CategoryList;

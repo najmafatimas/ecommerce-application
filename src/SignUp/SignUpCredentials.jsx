@@ -11,25 +11,66 @@ const SignUpCredentials = () => {
   let state=useRef();
   let zip=useRef();
   let history = useHistory();
- let addUser=(e)=>{
-  e.preventDefault();
-   const newObj={
-    username:username.current.value,
-    email:email.current.value,
-    password:password.current.value,
-    address:address.current.value,
-    city:city.current.value,
-    state:state.current.value,
-    zip:zip.current.value
-   }
-   localStorage.setItem('userDetails',JSON.stringify(newObj));
-   if(newObj!==null)
-   {
-      alert("signed up successfully")
-      history.goBack();
+//  let addUser=(e)=>{
+//   e.preventDefault();
+//    const newObj={
+//     username:username.current.value,
+//     email:email.current.value,
+//     password:password.current.value,
+//     address:address.current.value,
+//     city:city.current.value,
+//     state:state.current.value,
+//     zip:zip.current.value
+//    }
+//    const existingData = localStorage.getItem('users');
+//    let storedData = existingData ? JSON.parse(existingData) : [];
+//     storedData.push(newObj);
+//    localStorage.setItem('users', JSON.stringify(storedData));
+     
+//    if(JSON.parse(existingData)!==null)
+//    {
+//       alert("signed up successfully")
+//       history.goBack();
 
-   }
+//    }
+
    
+  // }
+  let addUser = (e) => {
+    e.preventDefault();
+  
+    const userName = username.current.value;
+    const emailId = email.current.value;
+    const userPassword = password.current.value;
+    const userAddress = address.current.value;
+    const userCity = city.current.value;
+    const userState = state.current.value;
+    const userZip = zip.current.value;
+  
+    const existingData = localStorage.getItem('users');
+    const storedData = existingData ? JSON.parse(existingData) : [];
+    const newId = storedData.length > 0 ? storedData[storedData.length - 1].id + 1 : 1; // Generate the next ID
+  
+    const newObj = {
+      id: newId,
+      userName,
+      emailId,
+      userPassword,
+      userAddress,
+      userCity,
+      userState,
+      userZip,
+    };
+  
+    storedData.push(newObj);
+    localStorage.setItem('users', JSON.stringify(storedData));
+   
+    if (username !== null) {
+      alert('Signed up successfully');
+      history.goBack();
+    }
+    
+    
   }
     return ( <div>
       
