@@ -23,13 +23,13 @@ console.log(showProf.userName)
     <div class="collapse navbar-collapse justify-content-end " id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" role="button"aria-current="page" href="/hello">Home</a>
+          <Link class="nav-link active" role="button"aria-current="page" to="/hello">Home</Link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
+          <Link class="nav-link" to="/about">About</Link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a>
+          <Link class="nav-link" to="/contact">Contact</Link>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle"  href="/"data-bs-toggle="dropdown" aria-expanded="false">
@@ -37,9 +37,9 @@ console.log(showProf.userName)
           </a>
           <ul class="dropdown-menu">
             <li><Link class="dropdown-item" to="/helloelectronics">Electronics</Link></li>
-            <li><Link class="dropdown-item" href="/hellojewelery">Jewelery</Link></li>
-            <li><Link class="dropdown-item" href="/hellomen's clothing">Men's clothing</Link></li>
-            <li><Link class="dropdown-item" href="/hellowomen's clothing">Women's clothing</Link></li>
+            <li><Link class="dropdown-item" to="/hellojewelery">Jewelery</Link></li>
+            <li><Link class="dropdown-item" to="/hellomen's clothing">Men's clothing</Link></li>
+            <li><Link class="dropdown-item" to="/hellowomen's clothing">Women's clothing</Link></li>
           </ul>
         </li>
       </ul>
