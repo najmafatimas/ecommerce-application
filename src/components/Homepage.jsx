@@ -2,13 +2,18 @@ import {useEffect,useState} from 'react'
 import { Link } from 'react-router-dom';
 
 const Homepage = () => {
+     
     const [productList,setProductList]=useState([])
     useEffect(()=>{
+       
         fetch('https://fakestoreapi.com/products')
             .then(res=>res.json())
-            .then(json=>setProductList(json))
+            .then(json=>{setProductList(json);})
     },[])
-    return ( <><div  className="product">
+    return ( 
+        
+    <div>
+    <div  className="product">
         {
             productList.map((v)=>{
                 return (<div key={v.id}>
@@ -23,7 +28,7 @@ const Homepage = () => {
             })
         }
    
-    </div></> );
+    </div></div> );
 }
  
 export default Homepage;

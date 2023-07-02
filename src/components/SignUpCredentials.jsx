@@ -1,5 +1,4 @@
-import { useHistory, useParams } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { useHistory } from "react-router-dom";
 import { useRef } from "react";
 const SignUpCredentials = () => {
   let username = useRef();
@@ -11,31 +10,7 @@ const SignUpCredentials = () => {
   let state=useRef();
   let zip=useRef();
   let history = useHistory();
-//  let addUser=(e)=>{
-//   e.preventDefault();
-//    const newObj={
-//     username:username.current.value,
-//     email:email.current.value,
-//     password:password.current.value,
-//     address:address.current.value,
-//     city:city.current.value,
-//     state:state.current.value,
-//     zip:zip.current.value
-//    }
-//    const existingData = localStorage.getItem('users');
-//    let storedData = existingData ? JSON.parse(existingData) : [];
-//     storedData.push(newObj);
-//    localStorage.setItem('users', JSON.stringify(storedData));
-     
-//    if(JSON.parse(existingData)!==null)
-//    {
-//       alert("signed up successfully")
-//       history.goBack();
 
-//    }
-
-   
-  // }
   let addUser = (e) => {
     e.preventDefault();
   
@@ -62,12 +37,19 @@ const SignUpCredentials = () => {
       userZip,
     };
   
-    storedData.push(newObj);
-    localStorage.setItem('users', JSON.stringify(storedData));
+    // storedData.push(newObj);
+    // localStorage.setItem('users', JSON.stringify(storedData));
    
-    if (username !== null) {
+    if (existingData !== null && (username.current.value !== "") ) {
+      storedData.push(newObj);
+    localStorage.setItem('users', JSON.stringify(storedData));
       alert('Signed up successfully');
-      history.goBack();
+     history.push("/")
+    }
+    else
+    {
+      alert("Signed Up UnSuccessfull");
+      history.push("/")
     }
     
     

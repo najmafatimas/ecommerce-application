@@ -7,7 +7,7 @@ const ProductDetails = () => {
         fetch('https://fakestoreapi.com/products/'+id)
         .then(res=>res.json())
         .then(json=>setProductDetails(json))
-    },[])
+    },[id])
    console.log(productDetails)
     return (<> <div  className="product">
     {

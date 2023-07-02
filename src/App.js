@@ -1,11 +1,11 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { BrowserRouter as Router,Switch,Route } from 'react-router-dom';
-import Navbar from './SignUp/Navbar';
-import Homepage from './SignUp/Homepage';
-import Navbar1 from './SignUp/Navbar1';
-import CategoryList from './SignUp/CategoryList';
-import ProductDetails from './SignUp/ProductDetails';
+import Navbar from './components/Navbar';
+import Homepage from './components/Homepage';
+import Navbar1 from './components/Navbar1';
+import CategoryList from './components/CategoryList';
+import ProductDetails from './components/ProductDetails';
 function App() {
   return (
     <div className="App">

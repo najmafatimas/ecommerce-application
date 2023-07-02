@@ -1,9 +1,7 @@
-import { useHistory, useParams } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { useHistory} from "react-router-dom";
+
 import { useRef } from "react";
-import Navbar from "./Navbar";
-import SignUpCredentials from "./SignUpCredentials";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
 const Login = () => {
     let username = useRef();
     let password = useRef();
@@ -34,7 +32,7 @@ const Login = () => {
        else
        {
         alert("login successfully");
-        localStorage.setItem('userDetails',JSON.stringify(userInfo));
+        sessionStorage.setItem('userDetails',JSON.stringify(userInfo));
         history.push("/hello");
        }
 

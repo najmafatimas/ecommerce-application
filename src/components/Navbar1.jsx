@@ -3,33 +3,18 @@ const Navbar1 = () => {
   
  let [showProf,setShowProf]=useState({});
  useEffect(()=>{
-  setShowProf(JSON.parse(localStorage.getItem('userDetails')));
+  setShowProf(JSON.parse(sessionStorage.getItem('userDetails')));
 },[])
-const [isEditMode, setIsEditMode] = useState(false);
+
 
 console.log(showProf.userName)
-  // const [text, setText] = useState(showProf);
-  const toggleEditMode = () => {
-    setIsEditMode(true)
-  };
-  const [inputs, setInputs] = useState(showProf);
-
-
-  const handleInputChange = (event) => {
-    
-    // setText(event.target.value);
-    const { name, value } = event.target;
-    setInputs((prevInputs) => ({
-      ...prevInputs,
-      [name]: value,
-    }));
-  }
+ 
     
   
     return ( <div>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Ecommerce</a>
+    <a class="navbar-brand" href="/hello">Ecommerce</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -39,15 +24,15 @@ console.log(showProf.userName)
           <a class="nav-link active" aria-current="page" href="/hello">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="/about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="/contact">Contact</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="nav-link dropdown-toggle"   data-bs-toggle="dropdown" aria-expanded="false">
            Categories
-          </a>
+          </button>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/helloelectronics">Electronics</a></li>
             <li><a class="dropdown-item" href="/hellojewelery">Jewelery</a></li>
@@ -71,36 +56,13 @@ console.log(showProf.userName)
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      {/* {isEditMode ? (
-        <input type="text" value={text.userName} onChange={handleTextChange} />
-      ) : (
-        <p>{text}</p>
-      )} */}
-      {isEditMode ? (
-        <div>
-          {Object.entries(inputs).map(([key, value]) => (
-            <input
-              key={key}
-              type="text"
-              name={key}
-              value={value}
-              onChange={handleInputChange}
-            />
-          ))}
-        </div>
-      ) : (
-        <div>
-          {Object.entries(inputs).map(([key, value]) => (
-            <p key={key}>
-              {key}: {value}
-            </p>
-          ))}
-        </div>
-      )}
+      
+       
+     
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onClick={toggleEditMode}>Save changes</button>
+        <button type="button" class="btn btn-primary" >Save changes</button>
       </div>
     </div>
   </div>
