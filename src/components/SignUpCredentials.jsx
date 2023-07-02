@@ -21,6 +21,7 @@ const SignUpCredentials = () => {
     const userCity = city.current.value;
     const userState = state.current.value;
     const userZip = zip.current.value;
+    const userPhoneNumber=phoneNumber.current.value;
   
     const existingData = localStorage.getItem('users');
     const storedData = existingData ? JSON.parse(existingData) : [];
@@ -35,6 +36,7 @@ const SignUpCredentials = () => {
       userCity,
       userState,
       userZip,
+      userPhoneNumber
     };
   
     // storedData.push(newObj);
@@ -91,7 +93,7 @@ const SignUpCredentials = () => {
   </div>
  
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Sign Up</button>
+    <button type="submit" class="btn btn-dark">Sign Up</button>
   </div>
 </form>
     </div> );

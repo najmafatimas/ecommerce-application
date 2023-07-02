@@ -1,6 +1,7 @@
 import {useEffect,useState} from 'react'
 import { Link } from 'react-router-dom';
 
+
 const Homepage = () => {
      
     const [productList,setProductList]=useState([])
@@ -11,8 +12,9 @@ const Homepage = () => {
             .then(json=>{setProductList(json);})
     },[])
     return ( 
-        
-    <div>
+        <>
+       
+    <div >
     <div  className="product">
         {
             productList.map((v)=>{
@@ -28,7 +30,7 @@ const Homepage = () => {
             })
         }
    
-    </div></div> );
+    </div></div></> );
 }
  
 export default Homepage;

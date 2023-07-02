@@ -67,9 +67,9 @@ const Navbar = () => {
     const [showpop, setShowpop]=useState(false);
     const [showpopLogin,setShowpopLogin]=useState(false);
     return ( <div>
-        <nav class="navbar">
-        <a class="navbar-brand" href="/"><img src="e1logo.png" width="100px" height="100px" alt="Logo"></img></a>
-            <ul class="nav justify-content-end">
+        {/* <nav class="navbar bg-body-tertiary">
+        <a class="navbar-brand" href="/"><img src="e2logo.png" width="50px" height="50px" alt="Logo"></img></a>
+            <ul class="navbar-nav">
     <li class="nav-item">
       <button class="nav-link"  onClick={()=>{setShowpopLogin(true)}}>Sign Up</button>
     </li>
@@ -77,8 +77,29 @@ const Navbar = () => {
       <button class="nav-link" onClick={()=>{setShowpop(true)}}>Login</button>
     </li>
     
-  </ul></nav>
-  
+  </ul></nav> */}
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/hello"><img src="e2logo.png" width="50px" height="50px" alt="Logo"></img></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end " id="navbarNavDropdown">
+      <ul class="navbar-nav">
+      <li class="nav-item">
+      <button class="nav-link active"  onClick={()=>{setShowpopLogin(true)}}>Sign Up</button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link active" onClick={()=>{setShowpop(true)}}>Login</button>
+    </li>
+        
+      </ul>
+      
+     
+    </div>
+  </div>
+</nav>
+<div ><img src="e3logo.jpg" alt="shopping logo" width="100%"/></div>
   <div className="wrapper">
           <div className="modal" style={{ display:showpopLogin===true ? 'block' : 'none' }} >
             <div className="modal-dialog" id="center-aligned-account-modal">

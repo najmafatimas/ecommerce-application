@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useHistory} from "react-router-dom";
+
 const Navbar1 = () => {
-  
+  let history=useHistory();
  let [showProf,setShowProf]=useState({});
  useEffect(()=>{
   setShowProf(JSON.parse(sessionStorage.getItem('userDetails')));
@@ -14,7 +16,7 @@ console.log(showProf.userName)
     return ( <div>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/hello">Ecommerce</a>
+    <a class="navbar-brand" href="/hello"><img src="e2logo.png" width="50px" height="50px" alt="Logo"></img></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -30,9 +32,9 @@ console.log(showProf.userName)
           <a class="nav-link" href="/contact">Contact</a>
         </li>
         <li class="nav-item dropdown">
-          <button class="nav-link dropdown-toggle"   data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle"  href="/" data-bs-toggle="dropdown" aria-expanded="false">
            Categories
-          </button>
+          </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/helloelectronics">Electronics</a></li>
             <li><a class="dropdown-item" href="/hellojewelery">Jewelery</a></li>
@@ -56,13 +58,31 @@ console.log(showProf.userName)
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      
+      <div class="header">
+      <i class="fa fa-user" style={{"font-size":"60px"}}></i>
+    <div class="profile-name">{showProf.userName}</div>
+    <div class="profile-username">@{showProf.userName}</div>
+  </div>
+  
+ 
+  
+  <div class="section">
+    <div class="section-heading">Contact Information</div>
+    <div class="section-content">
+      Email: {showProf.emailId}<br/>
+      Phone: {showProf.userPhoneNumber}<br/>
+      Address: {showProf.userAddress},{showProf.userCity},{showProf.userState}<br/>
+    </div>
+  </div>
        
      
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" >Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={()=>{
+          sessionStorage.clear();
+          history.push("/")
+        }}>Logout</button>
+        
       </div>
     </div>
   </div>

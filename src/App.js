@@ -28,6 +28,14 @@ function App() {
       <Navbar1/>
         <ProductDetails/>
       </Route>
+      <Route  path='/about'>
+       <Navbar1/>
+        
+      </Route>
+      <Route  path='/contact'>
+       <Navbar1/>
+        
+      </Route>
       </Switch>
       
       </Router>
